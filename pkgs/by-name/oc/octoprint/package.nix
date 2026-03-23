@@ -151,7 +151,6 @@ let
               wrapt
               zeroconf
               zipstream-ng
-              class-doc
               pydantic
             ]
             ++ lib.optionals stdenv.hostPlatform.isDarwin [ py.pkgs.appdirs ]

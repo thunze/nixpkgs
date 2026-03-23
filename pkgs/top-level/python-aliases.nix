@@ -126,6 +126,7 @@ mapAliases {
   characteristic = throw "'characteristic' has been removed because it is no longer maintained upstream"; # Added 2026-01-14
   chart-studio = throw "'chart-studio' has been removed as it is no longer maintained upstream"; # Added 2026-03-12
   cirq-rigetti = throw "cirq-rigetti was removed because it is no longer provided by upstream"; # added 2025-09-13
+  class-doc = throw "'class-doc' has been removed as it was unmaintained upstream"; # Added 2026-03-23
   class-registry = throw "'class-registry' has been renamed to/replaced by 'phx-class-registry'"; # Converted to throw 2025-10-29
   ColanderAlchemy = throw "'ColanderAlchemy' has been renamed to/replaced by 'colanderalchemy'"; # Converted to throw 2025-10-29
   command_runner = throw "'command_runner' has been renamed to/replaced by 'command-runner'"; # Converted to throw 2025-10-29
