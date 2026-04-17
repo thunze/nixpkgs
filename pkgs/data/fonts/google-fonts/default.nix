@@ -57,13 +57,13 @@ let
     }:
     stdenvNoCC.mkDerivation (finalAttrs: {
       pname = "google-fonts-${normalizeName name}";
-      version = "0-unstable-2026-03-13";
+      version = "0-unstable-2026-04-16";
 
       src = fetchFromGitHub {
         owner = "google";
         repo = "fonts";
-        rev = "5174b3333331c966c38f4355d50b03ca1c1df2f9";
-        hash = "sha256-XvFlnyXCM69WscpY20EhKAaKYj1fs0eqmODZWx0NIPg=";
+        rev = "47831f08ec6d6d7ad6b465f23dc9f9a890a2a04b";
+        hash = "sha256-T+rPBZ3ulW5dQqcVecm8XCY51gnGwD4QK5GHbNvv4Lc=";
       };
 
       # Setting `sourceRoot` instead would still copy the entire source to the

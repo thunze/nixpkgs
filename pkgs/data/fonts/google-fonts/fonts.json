@@ -810,7 +810,7 @@
   {
     "name": "Arapey",
     "designer": "Eduardo Tunni",
-    "minisite": "",
+    "minisite": "https://etunni.github.io/Arapey-Minisite",
     "category": "SERIF",
     "license": "OFL",
     "path": "ofl/arapey"
@@ -1230,6 +1230,14 @@
     "category": "SERIF",
     "license": "OFL",
     "path": "ofl/bizudpmincho"
+  },
+  {
+    "name": "BJCree",
+    "designer": "SIL International",
+    "minisite": "",
+    "category": "SERIF",
+    "license": "OFL",
+    "path": "ofl/bjcree"
   },
   {
     "name": "Babylonica",
@@ -3990,6 +3998,14 @@
     "category": "SERIF",
     "license": "OFL",
     "path": "ofl/esteban"
+  },
+  {
+    "name": "Estedad",
+    "designer": "Amin Abedi, Fontamin",
+    "minisite": "",
+    "category": "SANS_SERIF",
+    "license": "OFL",
+    "path": "ofl/estedad"
   },
   {
     "name": "Estonia",
@@ -12860,7 +12876,7 @@
     "designer": "Christian Robertson",
     "minisite": "",
     "category": "MONOSPACE",
-    "license": "APACHE2",
+    "license": "OFL",
     "path": "ofl/robotomono"
   },
   {
@@ -13382,6 +13398,14 @@
     "category": "SANS_SERIF",
     "license": "OFL",
     "path": "ofl/sairasemicondensed"
+  },
+  {
+    "name": "Saira Stencil",
+    "designer": "Hector Gatti, Omnibus-Type",
+    "minisite": "",
+    "category": "DISPLAY",
+    "license": "OFL",
+    "path": "ofl/sairastencil"
   },
   {
     "name": "Saira Stencil One",
@@ -14438,6 +14462,14 @@
     "category": "SANS_SERIF",
     "license": "OFL",
     "path": "ofl/strait"
+  },
+  {
+    "name": "Strichpunkt Sans",
+    "designer": "René Bieder",
+    "minisite": "",
+    "category": "SANS_SERIF",
+    "license": "OFL",
+    "path": "ofl/strichpunktsans"
   },
   {
     "name": "Strong",
