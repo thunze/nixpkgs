@@ -136,6 +136,7 @@ let
         downloadPage = "https://github.com/google/fonts";
         license = makeLicense license;
         sourceProvenance = [ lib.sourceTypes.binaryBytecode ];
+        maintainers = [ lib.maintainers.thunze ];
         platforms = lib.platforms.all;
       };
     });
