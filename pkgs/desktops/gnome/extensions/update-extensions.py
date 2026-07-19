@@ -206,6 +206,11 @@ def process_extension(extension: dict[str, Any]) -> dict[str, Any] | None:
         return None
     logging.info(f"Processing '{uuid}'")
 
+    if uuid == "wandathefish@ke.labrie.gmail.com":
+        # 000 permissions in the extension zip are causing `nix-prefetch-url` to fail
+        logging.warning(f"Skipping '{uuid}'")
+        return None
+
     # Input is a mapping str -> { version: int, … }
     # We want to map shell versions to extension versions
     shell_version_map: dict[ShellVersion, int] = {
