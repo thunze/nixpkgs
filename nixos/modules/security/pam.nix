@@ -1517,6 +1517,9 @@ let
                 enable = cfg.oo7.enable;
                 control = "optional";
                 modulePath = "${pkgs.oo7-pam}/lib/security/pam_oo7.so";
+                settings = {
+                  use_authtok = true;
+                };
               }
               {
                 name = "rosec";
