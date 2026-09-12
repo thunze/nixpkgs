@@ -294,7 +294,7 @@ in
         ) flashbackWms;
 
       security.pam.services.gnome-flashback = {
-        enableGnomeKeyring = true;
+        oo7.enable = true;
       };
 
       systemd.packages = [
@@ -336,12 +336,12 @@ in
       services.power-profiles-daemon.enable = mkDefault true;
       services.gnome.at-spi2-core.enable = true;
       services.gnome.evolution-data-server.enable = true;
-      services.gnome.gnome-keyring.enable = mkDefault true;
       services.gnome.gcr-ssh-agent.enable = mkDefault true;
       services.gnome.gnome-online-accounts.enable = mkDefault true;
       services.gnome.localsearch.enable = mkDefault true;
       services.gnome.tinysparql.enable = mkDefault true;
       services.hardware.bolt.enable = mkDefault true;
+      services.oo7.enable = mkDefault true;
       # TODO: Enable once #177946 is resolved
       # services.packagekit.enable = mkDefault true;
       services.udisks2.enable = true;
@@ -372,6 +372,13 @@ in
       # Needed for themes and backgrounds
       environment.pathsToLink = [
         "/share" # TODO: https://github.com/NixOS/nixpkgs/issues/47173
+      ];
+
+      warnings = [
+        (lib.mkIf (serviceCfg.gnome-keyring.enable) ''
+          The default secret service provider on GNOME has been changed from
+          `gnome-keyring` to `oo7`.
+        '')
       ];
     })
 
@@ -570,5 +577,4 @@ in
       services.sysprof.enable = notExcluded pkgs.sysprof;
     })
   ];
-
 }

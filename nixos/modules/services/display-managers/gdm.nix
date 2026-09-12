@@ -546,7 +546,7 @@ in
             }
             {
               name = "gdm";
-              enable = pamLogin.enable && pamLogin.enableGnomeKeyring;
+              enable = pamLogin.enable && (pamLogin.enableGnomeKeyring || pamLogin.oo7.enable);
               control = "[success=ok default=1]";
               modulePath = "${gdm}/lib/security/pam_gdm.so";
             }
@@ -555,6 +555,12 @@ in
               enable = pamLogin.enable && pamLogin.enableGnomeKeyring;
               control = "optional";
               modulePath = "${pkgs.gnome-keyring}/lib/security/pam_gnome_keyring.so";
+            }
+            {
+              name = "oo7";
+              enable = pamLogin.enable && pamLogin.oo7.enable;
+              control = "optional";
+              modulePath = "${pkgs.oo7-pam}/lib/security/pam_oo7.so";
             }
             {
               name = "permit";
@@ -634,7 +640,7 @@ in
             }
             {
               name = "gdm";
-              enable = pamLogin.enable && pamLogin.enableGnomeKeyring;
+              enable = pamLogin.enable && (pamLogin.enableGnomeKeyring || pamLogin.oo7.enable);
               control = "[success=ok default=1]";
               modulePath = "${gdm}/lib/security/pam_gdm.so";
             }
@@ -643,6 +649,12 @@ in
               enable = pamLogin.enable && pamLogin.enableGnomeKeyring;
               control = "optional";
               modulePath = "${pkgs.gnome-keyring}/lib/security/pam_gnome_keyring.so";
+            }
+            {
+              name = "oo7";
+              enable = pamLogin.enable && pamLogin.oo7.enable;
+              control = "optional";
+              modulePath = "${pkgs.oo7-pam}/lib/security/pam_oo7.so";
             }
           ];
 
