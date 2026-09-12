@@ -3,6 +3,7 @@
   stdenv,
   replaceVars,
   fetchFromGitHub,
+  fetchpatch,
   autoreconfHook,
   gettext,
   makeWrapper,
@@ -67,13 +68,13 @@ in
 
 stdenv.mkDerivation (finalAttrs: {
   pname = "ibus";
-  version = "1.5.35-beta1";
+  version = "1.5.34";
 
   src = fetchFromGitHub {
     owner = "ibus";
     repo = "ibus";
     tag = finalAttrs.version;
-    hash = "sha256-yZ++92u5impw27ZAEaf5DrqK6aYWh7hytuBqRxQqccE=";
+    hash = "sha256-MCxzMnG+g2FC4pZtDOP2c7vSRG5Zk6EfrkGnEyFvBfQ=";
   };
 
   patches = [
@@ -88,6 +89,14 @@ stdenv.mkDerivation (finalAttrs: {
       PYTHON = null;
     })
     ./build-without-dbus-launch.patch
+
+    # Fix GTK crashes
+    # GTK issue: https://gitlab.gnome.org/GNOME/gtk/-/work_items/8341
+    # Upstream PR: https://github.com/ibus/ibus/pull/2929
+    (fetchpatch {
+      url = "https://github.com/ibus/ibus/commit/c534999a9dbea2666864250d74e058ecfb46e76f.patch";
+      hash = "sha256-1h48hvdrDh2Qh4+SufL147CxlfiwvP/Jv509X0WnbrA=";
+    })
   ];
 
   outputs = [
