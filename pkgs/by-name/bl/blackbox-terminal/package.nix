@@ -29,6 +29,10 @@ stdenv.mkDerivation (finalAttrs: {
     owner = "raggesilver";
     repo = "blackbox";
     tag = "v${finalAttrs.version}";
+    # At the time of writing, using fetchzip returns HTTP 406 and seems to
+    # require a `_gitlab_session` cookie to be set in order to get an HTTP 200
+    # response.
+    forceFetchGit = true;
     hash = "sha256-LcJKbvEwXv47F1UYF5IF7b5K5o0ols77Q+HY0gQMy2c=";
   };
 
