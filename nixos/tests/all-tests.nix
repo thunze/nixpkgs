@@ -523,6 +523,7 @@ in
   cri-o = runTestOn [ "aarch64-linux" "x86_64-linux" ] ./cri-o.nix;
   croc = runTest ./croc.nix;
   cross-seed = runTest ./cross-seed.nix;
+  crowdsec = import ./crowdsec/default.nix { inherit runTest; };
   cryptpad = runTest ./cryptpad.nix;
   cups-pdf = runTest ./cups-pdf.nix;
   curl-impersonate = runTest ./curl-impersonate.nix;
@@ -582,6 +583,7 @@ in
   druid = handleTestOn [ "x86_64-linux" ] ./druid { };
   drupal = runTest ./drupal.nix;
   dublin-traceroute = runTest ./dublin-traceroute.nix;
+  dufs = runTest ./dufs.nix;
   duplicity = runTest ./duplicity.nix;
   dwl = runTestOn [ "x86_64-linux" "aarch64-linux" ] ./dwl.nix;
   e57inspector = import ./e57inspector.nix { inherit pkgs runTest; };
@@ -1043,6 +1045,7 @@ in
   libinput = runTest ./libinput.nix;
   librechat = runTest ./librechat.nix;
   librenms = runTest ./librenms.nix;
+  libreqos = runTest ./libreqos.nix;
   libresprite = runTest ./libresprite.nix;
   libreswan = runTest ./libreswan.nix;
   libreswan-nat = runTest ./libreswan-nat.nix;
@@ -1147,7 +1150,6 @@ in
   minecraft-server = runTest ./minecraft-server.nix;
   minidlna = runTest ./minidlna.nix;
   miniflux = runTest ./miniflux.nix;
-  minio = runTest ./minio.nix;
   minuspod = runTest ./minuspod.nix;
   miracle-wm = runTest ./miracle-wm.nix;
   miriway = runTest ./miriway.nix;
@@ -1494,10 +1496,6 @@ in
   phosh = runTest ./phosh.nix;
   photonvision = runTest ./photonvision.nix;
   photoprism = runTest ./photoprism.nix;
-  php = import ./php/default.nix {
-    inherit runTest;
-    php = pkgs.php;
-  };
   php82 = import ./php/default.nix {
     inherit runTest;
     php = pkgs.php82;
@@ -1692,6 +1690,7 @@ in
   rxe = runTest ./rxe.nix;
   sabnzbd = runTest ./sabnzbd.nix;
   sabnzbd-module = runTest ./sabnzbd-module.nix;
+  salt = runTest ./salt.nix;
   samba = runTest ./samba.nix;
   samba-wsdd = runTest ./samba-wsdd.nix;
   sane = runTest ./sane.nix;
@@ -2058,7 +2057,6 @@ in
   wakapi = runTest ./wakapi.nix;
   warpgate = runTest ./warpgate.nix;
   warzone2100 = runTest ./warzone2100.nix;
-  wasabibackend = runTest ./wasabibackend.nix;
   wastebin = runTest ./wastebin.nix;
   watchdogd = runTest ./watchdogd.nix;
   watt = runTest ./watt.nix;

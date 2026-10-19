@@ -2274,7 +2274,10 @@ with pkgs;
     )
   );
 
-  netdata = callPackage ../tools/system/netdata { };
+  netdata = callPackage ../tools/system/netdata {
+    go = go_1_27;
+    buildGoModule = buildGo127Module;
+  };
   netdataCloud = netdata.override {
     withCloudUi = true;
   };
@@ -4391,7 +4394,7 @@ with pkgs;
   # PHP interpreters, packages and extensions.
   #
   # Set default PHP interpreter, extensions and packages
-  php = php84;
+  php = php85;
   phpExtensions = recurseIntoAttrs php.extensions;
   phpPackages = recurseIntoAttrs php.packages;
 
@@ -4532,7 +4535,6 @@ with pkgs;
     })
     mkRubyVersion
     mkRuby
-    ruby_3_3
     ruby_3_4
     ruby_4_0
     ;
@@ -4540,7 +4542,6 @@ with pkgs;
   ruby = ruby_3_4;
   rubyPackages = rubyPackages_3_4;
 
-  rubyPackages_3_3 = recurseIntoAttrs ruby_3_3.gems;
   rubyPackages_3_4 = recurseIntoAttrs ruby_3_4.gems;
   rubyPackages_4_0 = recurseIntoAttrs ruby_4_0.gems;
 
@@ -8242,11 +8243,6 @@ with pkgs;
 
   arelle = with python3Packages; toPythonApplication arelle;
 
-  astroid = callPackage ../applications/networking/mailreaders/astroid {
-    vim = vim-full.override { features = "normal"; };
-    protobuf = protobuf_21;
-  };
-
   audacious = audacious-bare.override { withPlugins = true; };
 
   bambootracker-qt6 = bambootracker.override { withQt6 = true; };
@@ -8835,8 +8831,6 @@ with pkgs;
   pijuice = with python3Packages; toPythonApplication pijuice;
 
   pinegrow6 = pinegrow.override { pinegrowVersion = "6"; };
-
-  pleroma-bot = python3Packages.callPackage ../development/python-modules/pleroma-bot { };
 
   pnglatex = with python3Packages; toPythonApplication pnglatex;
 
